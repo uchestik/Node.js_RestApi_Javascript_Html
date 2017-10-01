@@ -1,8 +1,9 @@
 /* global $ */
+/* global req */
 
 $(function(){
     $(document).on("click","a:not([href^=http])",function(){
-    this.href = "https://www.obycodigitalmarketing.com" + this.href;
+    this.href = "https://" + this.href;
 });
 });
 
