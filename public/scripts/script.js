@@ -1,5 +1,12 @@
 /* global $ */
 
+$(function(){
+    $(document).on("click","a:not([href^=http])",function(){
+    this.href = "https://www.obycodigitalmarketing.com" + this.href;
+});
+});
+
+
 // the responsive menu starts here
 
 $(function(){{

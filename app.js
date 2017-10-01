@@ -82,6 +82,14 @@ function paginate(req, res, next){
     });
 }
 
+/* At the top, with other redirect methods before other routes */
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https')
+    res.redirect('https://obycodigitalmarketing.com'+req.url)
+  else
+    next() /* Continue to other routes if we're not redirecting */
+})
+
 
 //this is the route section
 app.get('/', function(req,res){
