@@ -1,11 +1,4 @@
 /* global $ */
-/* global req */
-
-$(function(){
-    $(document).on("click","a:not([href^=http])",function(){
-    this.href = "https://" + this.href;
-});
-});
 
 
 // the responsive menu starts here
