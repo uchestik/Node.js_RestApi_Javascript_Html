@@ -13,7 +13,6 @@ var localStrategy = require('passport-local');
 var passportLocalMongoose = require('passport-local-mongoose');
 var User = require('./models/user');
 var app = express();
-const sgMail = require('@sendgrid/mail');
 var Email = require('./models/email');
 
 // mongoose.connect('mongodb://localhost/obyco');
