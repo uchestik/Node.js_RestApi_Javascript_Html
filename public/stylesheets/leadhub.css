@@ -1,0 +1,60 @@
+.sidenav{
+    margin-top: 50px;
+}
+.sidenav ul{
+    padding:0;
+    margin:0;
+    
+}
+.sidenav ul li{
+    list-style: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    border:1px solid gray;
+    
+}
+.leadLine{
+    border-bottom: 4px solid gold;
+    padding: 5px;
+}
+
+.innerList{
+    list-style: none;
+}
+.leadRow li{
+    list-style: none;
+    display: inline;
+    padding-right: 5px;
+}
+.smallInput{
+    display: block;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.footer{
+    /*background:rgb(77,77,77);*/
+    background:rgb(64,64,64);
+    color: white;
+}
+.social-media ul a{
+    color: white;
+}
+.social-media ul a li{
+    list-style: none;
+    display:inline;
+    font-size: 30px;
+    padding:10px;
+}
+.rights{
+    font-size: 15px;
+}
+.policy a{
+    color:white;
+    padding:5px;
+    font-size: 12px;
+}
+/*footer ends here*/

@@ -1,0 +1,220 @@
+html, body {
+    padding:0;
+    margin:0;
+}
+body{ 
+  background: url(https://farm5.staticflickr.com/4439/35825216814_cd61e273c7_k.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+div{
+    padding:0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    /*padding: 0;*/
+}
+
+.navbar{
+    margin-bottom:0;
+    border-radius: 0;
+    color: white;
+}
+.page1{
+    z-index: -1;
+    /*background:rgb(238,238,238);*/
+    height: 100%;
+    margin-top: 0;
+    margin-bottom:0;
+    padding: 0;
+}
+.landing-page-first{
+    position: relative;
+    padding: 0;
+}
+#landing-page-pic{
+    height: 400px;
+    width: 100%;
+    max-width: 900px;
+    max-height: 400px;
+    z-index: 0;
+    position: relative;
+}
+.landing-page-pitch{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    max-width: 900px;
+    max-height: 400px;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    background:rgba(32,32,32,0.5);
+}
+.text-box{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    color: white;
+}
+.form-section{
+    padding:0;
+    margin: 0;
+}
+form{
+    /*position: absolute;*/
+    width: 100%;
+    background:gray;
+    margin-top: 40px;
+    margin-left: 48.75px;
+    border-radius: 10px;
+}
+form h4{
+    padding-top: 10px;
+    margin: 0;
+    padding-bottom: 10px;
+    color: rgb(255,215,0);
+    font-weight: bold;
+}
+form button{
+    width: 33.33%;
+    margin:3% 33.33%;
+    background:white;
+    color:blue;
+    border-radius: 15px;
+    /*padding:3px;*/
+}
+#firstNameInput{
+    width: 90%;
+    margin:1% 5%;
+}
+#lastNameInput{
+    width: 90%;
+    margin:1% 5%;
+}
+#emailInput{
+    width: 90%;
+    margin:1% 5%;
+}
+#interestInput{
+    width: 90%;
+    margin:1% 5%;
+}
+/*section 3 starts here*/
+.page2{
+    background:rgba(255,255,255,0.8);
+}
+.sam-profile{
+    margin: 0;
+    padding: 0;
+    /*background:pink;*/
+}
+.sams-info{
+    line-height: 2;
+}
+div .image{
+    text-align: center;
+}
+.sam-profile img{
+    margin: 0 auto 0 auto;
+    border-radius: 50%;
+    padding:3px;
+    /*margin-top: 1%;*/
+    /*margin-left: 30.77%;*/
+    /*width: 38.46%;*/
+    max-width: 150px;
+    max-height:150px;
+    display: block;
+    /*text-align: center;*/
+}
+.quote-box{
+    position: relative;
+    height: 266px;
+    background:rgba(22,213,240,0.6);
+    padding:0;
+    margin: 0;
+}
+#quote-mark{
+    font-size: 100px;
+    z-index: 0;
+    padding:0;
+    padding-left: 5px;
+    margin: 0;
+    color: rgb(255,245,74);
+}
+.quote{
+    position: absolute;
+    top: 20%;
+    font-size:34px;
+    width: 80%;
+    left: 10%;
+    z-index: 1;
+    padding: 5px;
+    color: black;
+}
+/*section 3 ends here*/
+/*footer starts here*/
+.last{
+    padding:0;
+    width: 100%;
+}
+.footer{
+    /*background:rgb(77,77,77);*/
+    background:rgb(64,64,64);
+    color: white;
+}
+.social-media ul a{
+    color: white;
+}
+.social-media ul a li{
+    list-style: none;
+    display:inline;
+    font-size: 30px;
+    padding:10px;
+}
+.rights{
+    font-size: 15px;
+}
+.policy a{
+    color:white;
+    padding:5px;
+    font-size: 12px;
+}
+/*footer ends here*/
+@media only screen and (max-width : 970px) {
+    
+    .text-box{
+        width: 80%;
+        top: 40%;
+        left: 10%;
+    }
+    .form-section{
+        padding:0;
+        margin: 0;
+    }
+    form{
+        /*position: absolute;*/
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        margin:0;
+        border-radius: 0px;
+        padding: 0;
+    }
+    .quote{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .social-media ul{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding:0; 
+    }
+}
+

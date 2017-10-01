@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>OBYCO DIGITAL MARKETING</title>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/leadhub.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Work+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">OBYCO DIGITAL MARKETING</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li class="active"><a href="#">Home</a></li>-->
+        <!--<li class="dropdown">-->
+        <!--  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>-->
+        <!--  <ul class="dropdown-menu">-->
+        <!--    <li><a href="#">Page 1-1</a></li>-->
+        <!--    <li><a href="#">Page 1-2</a></li>-->
+        <!--    <li><a href="#">Page 1-3</a></li>-->
+        <!--  </ul>-->
+        <!--</li>-->
+        <li><a href="/services">Service Packages</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">-->
+      <!--  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+      <!--  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+      <!--</ul>-->
+    </div>
+  </div>
+</nav>
+<!--header ends here-->
+
+
+<!--the leadhub welcome page starts here-->
+
+<div class='container-fluid'>
+    <div class='row text-center'>
+        <div class='col-md-12'><h2>Welcome to the Lead Portal. Now Close!!!</h2></div>
+    </div>
+    <div class='row'>
+        <div class='sidenav col-md-1 col-sm-1 col-xs-12'>
+            <ul>
+                <a href='/leadportal'><li>New Leads</li></a>
+                <a href='/leadportal/view/webdevelopment'><li>Web Development Clients</li></a>
+                <a href='/leadportal/view/digitalmarketing'><li>Digital Marketing Clients</li></a>
+                <a href='/leadportal/view/socialmedia'><li>Social Media Clients</li></a>
+                <a href='/leadportal/view/opencontracts'><li>Open Contracts</li></a>
+                <a href='/leadportal/view/closedcontracts'><li>Closed Contracts</li></a>
+                <a href='/leadportal/view/emails'><li>Email List</li></a>
+                
+                
+                
+            </ul>
+        </div>
+        
+        <div class='leadView col-md-11 col-sm-12 col-xs-12'>
+          <div class='row'>
+            <div class='col-md-1'>
+              <h5>First Name</h5>
+            </div>
+            <div class='col-md-1'>
+              <h5>Last Name</h5>
+            </div>
+            <div class='col-md-2'>
+              <h5>Email Adress</h5>
+            </div>
+            <div class='col-md-2'>
+              <h5>Business Name</h5>
+            </div>
+            <div class='col-md-2'>
+              <h5>Interests</h5>
+            </div>
+            <div class='col-md-2'>
+              <h5>Comments</h5>
+            </div>
+            <div class='col-md-1'>
+              <h5>Success</h5>
+            </div>
+          </div>
+          
+          
+          <!--the lead section starts here-->
+          
+        <% lead.forEach (function(lead){ %>
+          
+          <div class='row leadLine'>
+            <div class='col-md-1'>
+              <h5><%= lead.firstName %></h5>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                <input class='smallInput' type='text' placeholder='First Name'  name='lead[firstName]' >
+                <button type='submit'>Update</button>
+              </form>
+              <hr>
+              
+              <h5>view profile</h5>
+              <a href='/leadportal/<% lead._id %>'>Open Profile</a>
+            
+            </div>
+            <div class='col-md-1'>
+              <h5><%= lead.lastName %></h5>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                <input class='smallInput' type='text' placeholder='Last Name'  name='lead[lastName]' >
+                <button type='submit'>Update</button>
+              </form>
+            </div>
+            <div class='col-md-2'>
+              <% lead.emails.forEach(function(email){ %>
+               <li class='innerList'>
+                <%= email %>
+               </li> 
+              <%   }); %>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                  <input class='smallInput' type='text' placeholder='Add Email' name='email' >
+                  <button type='submit'>Add Email</button>
+              </form>
+              <hr>
+              <h6>phone number</h6>
+              <% lead.phone.forEach(function(phone){ %>
+               <li class='innerList'>
+                <%= phone %>
+               </li> 
+              <%   }); %>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                <input class='smallInput' type='text' placeholder='Phone Number' name='phone' >
+                <button type='submit'>Add Phone Number</button>
+              </form>
+            </div>
+            <div class='col-md-2'>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                <input type='text' placeholder='Business Name' value='<%= lead.businessName %>' name='lead[businessName]' >
+                <button type='submit'>Update</button>
+              </form>
+            </div>
+            <div class='col-md-2'>
+
+              <% lead.interests.forEach(function(interest){ %>
+               <li class='innerList'>
+                <%= interest %>
+               </li> 
+              <%   }); %>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                  <input class='smallInput' type='text' placeholder='New Interest' name='interest' >
+                  <button type='submit'>Add New</button>
+              </form>
+              
+            </div>
+            <div class='col-md-2'>
+
+              <% lead.comments.forEach(function(comment){ %>
+               <li class='innerList'>
+                <%= comment %>
+               </li> 
+              <%   }); %>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                  <input class='smallInput' type='text' placeholder='Add Comment' name='comment' >
+                  <button type='submit'>Add Comment</button>
+              </form>
+              
+            </div>
+            <div class='col-md-1'>
+              <h5>success? (yes/no)</h5>
+              <%= lead.success %>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                  <input class='smallInput' type='text' placeholder='Success?' name='lead[success]' >
+                  <button type='submit'>Update</button>
+              </form>
+              <hr>
+              <h5>Open or Closed</h5>
+              <%= lead.openOrClose %>
+              <form action='/leadupdate/<%= lead._id %>?_method=PUT' method='POST'>
+                  <select>
+                    <option name='lead[openOrClose]' value="open"><i class="fa fa-star" aria-hidden="true"></i> OPEN LEAD</option>
+                    <option name='lead[openOrClose]' value="close"><i class="fa fa-times" aria-hidden="true"></i> CLOSED OUT LEAD</option>
+                  </select>
+                  <button type='submit'>Update</button>
+              </form>
+            </div>
+          </div>
+          
+          
+           <% }); %>
+          <!--the lead section ends here-->
+          
+          
+          
+          
+          
+          
+     </div>
+    </div>
+</div>
+
+<!--the leadhub welcome page ends here-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--the footer starts here-->
+<!--<div class='container last'>-->
+<!--            <div class='row footer'>-->
+<!--              <div class='policy text-center'>-->
+<!--                <a href='#'>Website Policy</a>-->
+<!--              </div>-->
+<!--              <div class='row'>-->
+<!--                <div class=' col-md-6 col-xs-12 social-media'>-->
+<!--                  <ul class='text-center'>-->
+<!--                    <a href="https://www.facebook.com/profile.php?id=100010728912872"><li><i class="fa fa-facebook-square" aria-hidden="true"></i></li></a>-->
+<!--                    <a href="https://www.linkedin.com/in/uchenna-nwankpa-213b64145"><li><i class="fa fa-linkedin-square" aria-hidden="true"></i></li></a>-->
+<!--                    <a href="https://www.instagram.com/goodluck_16/"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class='rights col-md-6 col-xs-12 text-center'>-->
+<!--                  Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 OBYCO LLC-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+      
+<!--the footerends here-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/script.js"></script>
+  </body>
+</html>

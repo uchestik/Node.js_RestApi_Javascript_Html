@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title><%= blog.title %></title>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/blog.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans|Ubuntu" rel="stylesheet">
+  </head>
+  <body>
+      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    
+      
+      <nav class="topMenu" >
+          <div class='container-fluid'>
+          
+          <ul class="navbar-left leftNavSection">
+            <li><a href='/'>OBYCO DIGITAL MARKETING</a></li> 
+            <span class='menu-btn pull-right'><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </ul>
+          
+          
+          
+          <ul class=" rightNavSection">
+            <!--<li class='clearList'><a href="/home">Home</a></li>-->
+            <li class='clearList'><a href="/servicepackage/webdesign">Web Design</a></li>
+            <li class='clearList'><a href="/servicepackage/webapp">Web Application</a></li>
+            <li class='clearList'><a href="/servicepackage/emailmarketing">Email Marketing</a></li>
+            <li class='clearList'><a href="/servicepackage/clickmarketing">Click Marketing</a></li>
+            <li class='clearList'><a href="/faq">FAQ</a></li>
+            <li class='clearList'><a href="/blog">Blog </a></li>
+          </ul>
+          
+        </div>
+      </nav>
+  <!--the nav section ends here-->
+  
+    <div class='container'>
+        <% if(error && error.length > 0){%>
+            <div class = 'action-error' role='alert'>
+               <%= error %> 
+            </div>
+        <% } %>
+    
+        <% if(success && success.length > 0){%>
+            <div class = 'action-success' role='alert'>
+               <%= success %> 
+            </div>
+        <% } %>
+    </div>
+  
+<div class='container'>
+<!--the blog header starts here-->
+    <div class='row blog-menu'>
+        <ul>
+            <li class='blog-brand'>
+                <button class='openSideBar'><i class="fa fa-bars" aria-hidden="true"></i> </button><a href='/blog'>Sam<span>'</span>s Blog<span>...</span></a>
+            </li>
+            <% if(currentUser){ %>
+            <li class='blog-menu-list pull-right'>
+                <a href='/blog/new'>New Post</a>
+            </li>
+            <% } %>
+            <!--<li class='blog-menu-list-2'>-->
+            <!--    <a href='#'><li>Want your own blog?</li></a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+    <!--the blog header ends here-->
+    <div class='row page-start'>
+        <!--the blog side bar starts here-->
+        <div class='col-md-2 side-bar'>
+            <div class='my-blog-profile-image'>
+                <img height='150' width='150' src='https://farm5.staticflickr.com/4403/36505837646_8fedd13428_b.jpg'>
+            </div>
+            <div class='blog-owners-name text-center'>
+                Uchenna 'SAM' Nwankpa <br>
+                <span class='founder'>Founder | Obyco LLC</span>
+            </div>
+            
+            <div class='sidebar-social-media text-center'>
+                <ul>
+                    <li><a href='https://www.facebook.com/profile.php?id=100010728912872'><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href='https://www.linkedin.com/in/uchenna-nwankpa-213b64145'><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    <li><a href='https://twitter.com/uchenna_nwankpa'><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            
+            <div class='blog-sidebar-email-form text-center'>
+                <form action='/blog/subscription' method='POST'>
+                    <input type='email' name='subscriptionEmails' placeholder='subscribe@email.com' required>
+                    <button type="submit" class="sidebar-form-btn"><i class="fa fa-envelope" aria-hidden="true"></i> Subscribe</button>
+                </form>
+            </div>
+            
+            <div class='sidebar-marketing text-center'>
+                Like this Blog? <br>
+                <i class="fa fa-hand-o-right" aria-hidden="true"></i> Subscribe to get special discounts on Marketing Campaigns
+            </div>
+            <div class='sidebar-credit text-center'>
+                Website and Blog built by Uchenna 'Sam' Nwankpa <br><br>
+                <span class='copyright'>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 <br> OBYCO LLC</span>
+            </div>
+        </div>
+        <!--the blog side bar ends here-->
+        <!--the blog section starts here-->
+        <div class= 'col-md-8 col-sm-10 col-xs-12 blog-post'>
+            <div class='blog-display'>
+            <div class='blog-showpage-title'>
+                <h2><%= blog.title %></h2>
+            </div>
+            <div class='blog-showpage-author'>
+                <h5>By <%= blog.author %></h5>   <%= blog.created.toDateString() %>
+            </div>
+            <div class='blog-showpage-image'>
+                <img src='<%= blog.image %>'>
+            </div>
+            <div class='blog-showpage-caption'>
+                <%= blog.imageCaption %>
+            </div>
+            <div class='blog-showpage-body'>
+                <p><%= blog.paragraphOne %></p>
+                <p><%= blog.paragraphTwo %></p>
+                <p><%= blog.paragraphThree %></p>
+                <p><%= blog.paragraphFour %></p>
+                <p><%= blog.paragraphFive %></p>
+                <p><%= blog.paragraphSix %></p>
+                <p><%= blog.paragraphSeven %></p>
+                <p><%= blog.paragraphEight %></p>
+                <p><%= blog.paragraphNine %></p>
+                <p><%= blog.paragraphTen %></p>
+            </div>
+            <!--the delete and edit section starts here-->
+           <% if(currentUser){ %>
+            <div class='delete-and-edit'>
+                <div class='edit-btn'>
+                    <a href='/blog/<%= blog._id %>/edit'>Edit</a>
+                </div>
+                <div class='deleteTrigger'>
+                    <button type="button" class="delete-btn">Delete</button>
+                </div>
+                <form action='/blog/delete/<%= blog._id %>?_method=DELETE' method='POST' class='text-center deleteBlogForm'>
+                    <h4>Are you sure you want to delete this Post?</h4>
+                    <button type="button" id='deleteFormClose' class="btn btn-info">No</button>  <button type="submit" class="btn btn-danger">Yes</button>
+                </form>
+                
+            </div>
+            <% } %>
+            <!--the delete and edit section ends here-->
+            </div>
+            <!--the blog section ends here-->
+            <!--the plugin section starts here-->
+            <!--<div class='container'>-->
+            <div class='row'>
+                <div class='col-xs-12 col-md-8 col-sm-10'>
+                    <!--facebook share plugin starts here-->
+                    <div class="fb-share-button" data-href="http://www.obycodigitalmarketing.com/blog/&lt;%= blog._id %&gt;" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.obycodigitalmarketing.com%2Fblog%2F%3C%25%3D+blog._id+%25%3E&amp;src=sdkpreparse">Share</a></div>
+                    <!--facebook share button ends here-->
+                    <!--linkedin share button starts here-->
+                    <div>
+                        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                        <script type="IN/Share" data-url="www.obycodigitalmarketing.com" data-counter="right"></script>
+                    </div>
+                    <!--linkedin share button ends here-->
+                    <!--the pinterest plugin starts here-->
+                    <!--<div class='pinterest'>-->
+                    <!--    <a href="https://www.pinterest.com/pin/create/button/">-->
+                    <!--        <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />-->
+                    <!--    </a>-->
+                    <!--</div>-->
+                    <!--the pinterest pluggin ends here-->
+                </div>
+            </div>
+        
+             <!--the plugin section ends here-->
+             <div class='row'>
+                 <div class='col-xs-12 col-md-8 col-sm-10'>
+                <!--the facebook comment section starts here-->
+                <div class="fb-comments" data-href="http://www.obycodigitalmarketing.com/blog/&lt;%= blog._id %&gt;" data-width="100%" data-numposts="5"></div>
+                <!--the facebook comment section ends here-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--the show page ends here-->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
+
+
+<!--<script type="text/javascript" src="Location of SDK javascript"></script>-->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/script.js"></script>
+  </body>
+</html>

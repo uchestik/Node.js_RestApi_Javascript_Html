@@ -1,0 +1,219 @@
+body{
+    /*background:rgba(112,128,144,0.8);*/
+    /*background:rgb(112,128,144);*/
+    background:rgba(147,198,239,0.5);
+}
+
+/*the nav bar section starts here*/
+  .menu-btn{
+        display: none;
+    }
+    .menu-display{
+        display: block;
+    }
+
+.topMenu{
+    padding:0px;
+    margin-bottom: 0;
+    border-radius: 0;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*border-bottom: 1px solid rgb(61,61,61);*/
+}
+.topMenu ul{
+    padding: 15px;
+    margin: 0;
+    display: block;
+}
+.topMenu .rightNavSection{
+    text-align: right;
+}
+.topMenu ul a{
+    color: white;
+}
+.topMenu ul li{
+    list-style: none;
+    display: inline;
+    padding: 10px;
+}
+
+/*the menu section ends here*/
+
+.page-top{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.basic{
+    background:rgba(105,105,105,0.5);
+    /*background:rgba(105,105,105,0.4);*/
+    /*background:rgba(105,105,105,0.7);*/
+    margin-left: 4%;
+    margin-right:4%;
+    border-radius: 5px;
+    max-width: 400px;
+    height: auto;
+    /*color: rgb(255,228,225);*/
+}
+
+
+.images img{
+    padding:20px;
+}
+.sub-header{
+    margin:0;
+    padding:0;
+}
+.sub-header h4{
+    margin:0;
+    font-size: larger;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: rgb(69,0,38);
+}
+.service-option{
+    /*border:1px solid yellow;*/
+    border-radius: 2px;
+    padding:5px;
+    padding-left: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /*-webkit-box-shadow: 3px 2px 2px 0.2px #2E2E2E;*/
+    /*box-shadow: 3px 2px 2px 0.2px #2E2E2E;*/
+    font-family: 'Marcellus SC', serif;
+    /*color: rgb(231,223,223);*/
+    color: gold;
+    font-size: 20px;
+    font-weight: bold;
+}
+.service-option-detail p{
+    padding-bottom: 6px;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+.showMoreBtn{
+    margin-bottom: 20px;
+}
+.showMoreBtn a{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 7px;
+    color: inherit;
+    border:1px solid rgb(238,221,153);
+    background:rgb(238,221,153);
+    transition: 0.4s;
+    
+}
+.showMoreBtn a:hover{
+    color: white;
+    /*background:rgb(43,51,249);*/
+    background:rgb(78,111,254);
+    border:1px solid white;
+    
+}
+/*footer starts here*/
+.last{
+    padding:0;
+    width: 100%;
+}
+.footer{
+    /*background:rgb(77,77,77);*/
+    background:rgba(0,0,0,0.6);
+    color: white;
+}
+.social-media ul a{
+    color: white;
+}
+.social-media ul a li{
+    list-style: none;
+    display:inline;
+    font-size: 30px;
+    padding:10px;
+}
+.rights{
+    font-size: 15px;
+}
+.policy a{
+    color:white;
+    padding:5px;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 990px) and (min-width: 550px) {
+    /*the header starts here*/
+    .leftNavSection{
+        display: block;
+        width: 100%;
+    }
+    .topMenu .rightNavSection{
+        padding: 0;
+        display: none;
+        text-align: left;
+    }
+    .topMenu .rightNavSection li{
+        display: block;
+    }
+    .topMenu .rightNavSection li a{
+        padding-left: 10px;
+    }
+    
+    .menu-btn{
+        display: inline;
+        color: white;
+    }
+    /*the header ends here*/
+    .social-media ul{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding:0; 
+    }
+    .basic{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+    .showMoreBtn{
+    margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 550px){
+    /*the header starts here*/
+    .topMenu .rightNavSection{
+        padding: 0;
+        display: none;
+        text-align: left;
+    }
+    .topMenu .rightNavSection li{
+        display: block;
+    }
+    .topMenu .rightNavSection li a{
+        padding-left: 10px;
+    }
+    
+    .menu-btn{
+        display: inline;
+        color: white;
+    }
+    /*the header ends here*/
+    .social-media ul{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding:0; 
+    }
+    .basic{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+    .showMoreBtn{
+    margin-bottom: 20px;
+    }
+}

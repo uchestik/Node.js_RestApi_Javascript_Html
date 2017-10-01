@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Sam's Blog - Web Development, Email Marketing,and Click Marketing Articles</title>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/blog.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans|Ubuntu" rel="stylesheet">
+  </head>
+  <body>
+   
+      <!--the section above the nav bar ends here-->
+      
+      <nav class="topMenu" >
+          <div class='container-fluid'>
+          
+          <ul class="navbar-left leftNavSection">
+            <li><a href='/'>OBYCO DIGITAL MARKETING</a></li> 
+            <span class='menu-btn pull-right'><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </ul>
+          
+          
+          
+          <ul class=" rightNavSection">
+            <!--<li class='clearList'><a href="/home">Home</a></li>-->
+            <li class='clearList'><a href="/servicepackage/webdesign">Web Design</a></li>
+            <li class='clearList'><a href="/servicepackage/webapp">Web Application</a></li>
+            <li class='clearList'><a href="/servicepackage/emailmarketing">Email Marketing</a></li>
+            <li class='clearList'><a href="/servicepackage/clickmarketing">Click Marketing</a></li>
+            <li class='clearList'><a href="/faq">FAQ</a></li>
+            <li class='clearList'><a href="/blog">Blog </a></li>
+          </ul>
+          
+        </div>
+      </nav>
+  <!--the nav section ends here-->
+  
+    <div class='container'>
+        <% if(error && error.length > 0){%>
+            <div class = 'action-error' role='alert'>
+               <%= error %> 
+            </div>
+        <% } %>
+    
+        <% if(success && success.length > 0){%>
+            <div class = 'action-success' role='alert'>
+               <%= success %> 
+            </div>
+        <% } %>
+    </div>
+  
+<div class='container'>
+    <!--the blog header starts here-->
+    <div class='row blog-menu'>
+        <ul>
+            <li class='blog-brand'>
+                <button class='openSideBar'><i class="fa fa-bars" aria-hidden="true"></i> </button><a href='/blog'>Sam<span>'</span>s Blog<span>...</span></a>
+            </li>
+            <% if(currentUser){ %>
+            <li class='blog-menu-list pull-right'>
+                <a href='/blog/new'>New Post</a>
+            </li>
+            <% } %>
+            <!--<li class='blog-menu-list-2'>-->
+            <!--    <a href='#'><li>Want your own blog?</li></a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+    <!--the blog header ends here-->
+    <div class='row page-start'>
+        <!--the blog side bar starts here-->
+        <div class='col-md-2 side-bar'>
+            <div class='my-blog-profile-image'>
+                <img height='150' width='150' src='https://farm5.staticflickr.com/4403/36505837646_8fedd13428_b.jpg'>
+            </div>
+            <div class='blog-owners-name text-center'>
+                Uchenna 'SAM' Nwankpa <br>
+                <span class='founder'>Founder | Obyco LLC</span>
+            </div>
+            
+            <div class='sidebar-social-media text-center'>
+                <ul>
+                    <li><a href='https://www.facebook.com/profile.php?id=100010728912872'><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href='https://www.linkedin.com/in/uchenna-nwankpa-213b64145'><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    <li><a href='https://twitter.com/uchenna_nwankpa'><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            
+            <div class='blog-sidebar-email-form text-center'>
+                <form action='/blog/subscription' method='POST'>
+                    <input type='email' name='email' placeholder='subscribe@email.com' required>
+                    <button type="submit" class="sidebar-form-btn"><i class="fa fa-envelope" aria-hidden="true"></i> Subscribe</button>
+                </form>
+            </div>
+            
+            <div class='sidebar-marketing text-center'>
+                Like this Blog? <br>
+                <i class="fa fa-hand-o-right" aria-hidden="true"></i> Subscribe to get special discounts on Marketing Campaigns
+            </div>
+            <div class='sidebar-credit text-center'>
+                Website and Blog built by Uchenna 'Sam' Nwankpa <br><br>
+                <span class='copyright'>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 <br> OBYCO LLC</span>
+            </div>
+        </div>
+        <!--the blog side bar ends here-->
+        <!--the blog diplay section starts here-->
+        <div class='col-md-10 blog-stamp'>
+            <div class='row blogPosterRow'>
+                <% blog.forEach (function(blog){ %>
+                    <div class='col-md-4 col-sm-4 col-xs-12'>
+                        <div class='poster'>
+                             <div class='poster-img'>
+                                <img height='200' width='200' src='<%= blog.image %>'>
+                             </div>
+                             <div class='blog-title'>
+                                 <%= blog.title %>
+                             </div>
+                             <div class='blog-author'>
+                                    <span class='by'>By </span><%= blog.author %>
+                             </div>
+                             <div class='blog-date'>
+                                 <span class='blogMonth'><%= blog.dateMonth %></span>  <span class='blogDay'><%= blog.dateDay %></span>  <span class='blogYear'><%= blog.dateYear %></span>
+                             </div>
+                             <div class='blog-content-snipet'>
+                                 <%= blog.paragraphOne.substring(0,200) %>.....
+                             </div>
+                             <div class='show-btn text-center'>
+                                 <a href='/blog/<%= blog._id %>'>Read</a>
+                             </div>
+                       </div>
+                    </div>
+               <% }); %>
+            </div>
+        </div>
+        
+        <!--the pagination starts here-->
+        <nav class='container text-center'>
+            <ul class='pagination'>
+                <li>
+                    <% for (var i = 0; i < pages; i++){ %>
+                    <% if (i === 0) { %>
+                         <li><a href='/blog'><%= i + 1 %></a></li>
+                    <% }else { %>
+                        <li><a href='/blog/page/<%= i %>'><%= i + 1 %></a></li>
+                        <% } %>
+                    <% } %>
+                </li>
+            </ul>
+        </nav>
+        <!--the pagination ends here-->
+        <!--the blog display section ends here-->
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/script.js"></script>
+  </body>
+</html>

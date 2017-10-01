@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>OBYCO DIGITAL MARKETING</title>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/blog.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans|Marcellus+SC" rel="stylesheet">
+  </head>
+  <body>
+      <nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">OBYCO DIGITAL MARKETING</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li class="active"><a href="#">Home</a></li>-->
+        <!--<li class="dropdown">-->
+        <!--  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>-->
+        <!--  <ul class="dropdown-menu">-->
+        <!--    <li><a href="#">Page 1-1</a></li>-->
+        <!--    <li><a href="#">Page 1-2</a></li>-->
+        <!--    <li><a href="#">Page 1-3</a></li>-->
+        <!--  </ul>-->
+        <!--</li>-->
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">-->
+      <!--  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+      <!--  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+      <!--</ul>-->
+    </div>
+  </div>
+</nav>
+<!--header ends here-->
+<div class='container'>
+    <div class='row blogInputPage'>
+        <div class='test10'>
+            <!--the blog header starts here-->
+            <div class='blog-menu'>
+                <div class='row'>
+                    <div class='blog-brand col-md-3 pull-left'>
+                        Sam's Blog
+                    </div>
+                    <!--<div class='col-md-9 blog-menu-list'>-->
+                    <!--    <ul class='pull-right'>-->
+                    <!--        <a href='/blog/new'><li>New </li></a>-->
+                    <!--        <a href='#'><li>Want your own blog?</li></a>-->
+                    <!--    </ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <!--the blog header ends here-->
+            <h3 class='text-center newPostHeader'>Enter New Blog Content</h3>
+            <div class='blogForm'>
+                <form action='/blog/new' method='POST'>
+                    <div class='BlogInputSpacing'>
+                        <label for='blogTitle'>Blog Title:</label>
+                        <div>
+                        <input type='text' class='blogInput'  name='blog[title]' id='blogTitle' placeholder=' Enter Blog Title' required>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label for='blogAuthor'>Blog Author:</label> 
+                        <div>
+                        <input type='text' class='blogInput' name='blog[author]' id='blogAuthor' placeholder=' Enter Blog Author' required>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label for='blogImage'>Blog image:</label>
+                        <div>
+                        <input type='text' class='blogInput' name='blog[image]'id='blogImage' placeholder=' Enter Blog image url' required>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label for='blogCaption'>Blog image caption:</label>
+                        <div>
+                        <input type='text' class='blogInput' name='blog[imageCaption]' id='blogCaption' placeholder=' Enter Blog Image Caption'>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label>Enter Today's Date (Month/DD/YYYY):</label>
+                        <div>
+                            <select name="blog[dateMonth]" class='selectInput' required>
+                              <option value="Jan">January</option>
+                              <option value="Feb">February</option>
+                              <option value="Mar">March</option>
+                              <option value="Apr">April</option>
+                              <option value="May">May</option>
+                              <option value="Jun">June</option>
+                              <option value="Jul">July</option>
+                              <option value="Aug">August</option>
+                              <option value="Sep">September</option>
+                              <option value="Oct">October</option>
+                              <option value="Nov">November</option>
+                              <option value="Dec">December</option>
+                            </select>
+                            <input type='number' class='numberInputDay' name='blog[dateDay]' min='1' max='31' placeholder='DD' required>
+                            <input type='number' class='numberInputYear' name='blog[dateYear]' min='2017' placeholder='YYYY' required>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 1 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphOne]' placeholder=' Enter Blog Content' required></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 2 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphTwo]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 3 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphThree]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 4 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphFour]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 5 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphFive]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 6 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphSix]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 7 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphSeven]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 8 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphEight]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 9 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphNine]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <div class='BlogInputSpacing'>
+                        <label class='labelBlogTextArea'>Add Paragraph 10 <span class='addParagraphIcon'><i class="fa fa-plus-circle" aria-hidden="true"></i></span>:</label>
+                        <div class='toggledTextArea textArea'>
+                        <textarea cols='65' rows='5' name='blog[paragraphTen]' placeholder=' Enter Blog Content'></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Post Blog</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--the footer starts here-->
+<div class='container last'>
+            <div class='row footer'>
+              <div class='policy text-center'>
+                <a href='#'>Website Policy</a>
+              </div>
+              <div class='row'>
+                <div class=' col-md-6 col-xs-12 social-media'>
+                  <ul class='text-center'>
+                    <a href="https://www.facebook.com/profile.php?id=100010728912872"><li><i class="fa fa-facebook-square" aria-hidden="true"></i></li></a>
+                    <a href="https://www.linkedin.com/in/uchenna-nwankpa-213b64145"><li><i class="fa fa-linkedin-square" aria-hidden="true"></i></li></a>
+                    <a href="https://www.instagram.com/goodluck_16/"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>
+                  </ul>
+                </div>
+                <div class='rights col-md-6 col-xs-12 text-center'>
+                  Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 OBYCO LLC
+                </div>
+              </div>
+            </div>
+          </div>
+      
+<!--the footerends here-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/script.js"></script>
+  </body>
+</html>

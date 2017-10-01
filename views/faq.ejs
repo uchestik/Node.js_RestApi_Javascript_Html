@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>OBYCO DIGITAL MARKETING | Frequently Asked Questions</title>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/home.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,800i" rel="stylesheet">
+  </head>
+  <body>
+      
+      <nav class="topMenu" >
+          <div class='container-fluid'>
+          
+          <ul class="navbar-left leftNavSection">
+            <li><a href='/'>OBYCO DIGITAL MARKETING</a></li> 
+            <span class='menu-btn pull-right'><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </ul>
+          
+          
+          
+          <ul class=" rightNavSection">
+            <!--<li class='clearList'><a href="/home">Home</a></li>-->
+            <li class='clearList'><a href="/servicepackage/webdesign">Web Design</a></li>
+            <li class='clearList'><a href="/servicepackage/webapp">Web Application</a></li>
+            <li class='clearList'><a href="/servicepackage/emailmarketing">Email Marketing</a></li>
+            <li class='clearList'><a href="/servicepackage/clickmarketing">Click Marketing</a></li>
+            <li class='clearList'><a href="/faq">FAQ</a></li>
+            <li class='clearList'><a href="/blog">Blog </a></li>
+          </ul>
+          
+        </div>
+      </nav>
+  <!--the nav section ends here-->
+  <div class='container'>
+        <% if(error && error.length > 0){%>
+            <div class = 'action-error' role='alert'>
+               <%= error %> 
+            </div>
+        <% } %>
+    
+        <% if(success && success.length > 0){%>
+            <div class = 'action-success' role='alert'>
+               <%= success %> 
+            </div>
+        <% } %>
+    </div>
+      
+   <div class='container'>
+     <h2 class='text-center'>Frequently Asked Questions</h2>
+     <!--the search box row starts here-->
+     <div class='row'>
+       <div class='col-md-12 col-sm-12 col-xs-12 searchbox'>
+         <div class='search-container input-group'>
+           <input type='text' class='form-control search' placeholder='Search for already asked questions...' id='searchbar'>
+           <div class='input-group-addon'><i class="fa fa-search" aria-hidden="true"></i></div>
+         </div>
+       </div>
+     </div>
+     <!--the search box row ends above here-->
+     <!--the question section starts here-->
+     <div class='row'>
+       <div class='col-md-8 col-sm-12 col-xs-12 questionSection'>
+       <%  faq.forEach(function(faq){ %>
+         <div class='questionWrapper'>
+           
+           <h3 class='question'><%= faq.question %></h3>
+           <div class='question-subtext'>
+             Asked by <span class='author'><%= faq.author %></span> on <span class='question-time'><%= faq.date.toDateString() %></span>
+           </div>
+           <% faq.response.forEach(function(response){ %>
+           <div class='answer'>
+           <p><%= response.answer %></p>
+           </div>
+           <div class='answer-time'>
+           <span>Answered by <span class='sam'><%= response.author %></span> on <%= response.time.toDateString() %></span>
+           </div>
+           <% }); %>
+           
+           <% if(currentUser){ %>
+           <div class='textbox-wrapper'>
+               <form action='/faq/<%= faq._id %>' method='POST'>
+               <input type='text'placeholder='Name' name='response[author]'>
+               <textarea type='text' name='response[answer]' class='faq-textarea' rows='3' placeholder='Respond to question...'></textarea>
+               <button type='submit'>Post Answer</button>
+               </form>
+           </div>
+           <% } %>
+         </div>
+      <% }); %>
+       </div>
+       
+       <div class='col-md-4 col-sm-12 col-xs-12'>
+         <div class='question-form-wrapper'>
+           <form action='/faq' method='POST'>
+             <h4>Still in search of answers? Ask a question <span class='attention'>here</span></h4>
+             <input type='text' placeholder='Name' name='faq[author]' value='Anonymous' class='question-name-input' required><br><br>
+             <textarea type='text'placeholder='question goes here' name='faq[question]' cols='3'class='question-textarea' required></textarea><br>
+             <button class='text-center' type='submit'>Get Answers</button>
+           </form>
+           <div class='credits text-center'>
+               <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 OBYCO LLC</p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!--the question row ends above here-->
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/scripts/script.js"></script>
+  </body>
+</html>
