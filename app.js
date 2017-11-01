@@ -220,7 +220,7 @@ function addToList(email,fName,lName){
   headers: 
    { 'postman-token': 'bf413d9f-be53-98aa-7be0-b3f1bd06ce13',
      'cache-control': 'no-cache',
-     authorization: 'Basic YW55c3RyaW5nOjFhMzUyZGU5ZGJiNTU0NGI4MWQ3YWQ4NjdlNjU1N2QwLXVzMTY=',
+     authorization: 'Basic <api key>',
      'content-type': 'application/json' },
   body: 
    { members: 
@@ -240,11 +240,11 @@ request(options, function (error, response, body) {
 
 function subscribe(email){
     var options = { method: 'POST',
-  url: 'https://us16.api.mailchimp.com/3.0/lists/c713f94a9b',
+  url: '<mailchimp_URL',
   headers: 
-   { 'postman-token': 'bf413d9f-be53-98aa-7be0-b3f1bd06ce13',
+   { 'postman-token': '<TOKEN>',
      'cache-control': 'no-cache',
-     authorization: 'Basic YW55c3RyaW5nOjFhMzUyZGU5ZGJiNTU0NGI4MWQ3YWQ4NjdlNjU1N2QwLXVzMTY=',
+     authorization: 'Basic <api key>',
      'content-type': 'application/json' },
   body: 
    { members: 
