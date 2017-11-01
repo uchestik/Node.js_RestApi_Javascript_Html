@@ -216,9 +216,9 @@ function isLoggedIn(req,res,next){
 
 function addToList(email,fName,lName){
     var options = { method: 'POST',
-  url: 'https://us16.api.mailchimp.com/3.0/lists/c381a4b684',
+  url: '<MAILCHIMP_URL>',
   headers: 
-   { 'postman-token': 'bf413d9f-be53-98aa-7be0-b3f1bd06ce13',
+   { 'postman-token': '<TOKEN>',
      'cache-control': 'no-cache',
      authorization: 'Basic <api key>',
      'content-type': 'application/json' },
