@@ -1,5 +1,3 @@
-# obycoDigitalMarketing
-This is the source code for https://www.obycodigitalmarketing.com
 
 Run this app with node app.js
 
